@@ -60,6 +60,7 @@ public class RegnskapApiImpl implements no.regnskap.generated.api.RegnskapApi {
         return new ResponseEntity<>(regnskap, HttpStatus.OK);
     }
 
+
     @Override
     public ResponseEntity<Regnskap> getRegnskapById(HttpServletRequest httpServletRequest, @ApiParam(value = "id",required=true) @PathVariable("id") String id) {
         ResponseEntity<Regnskap> response;
