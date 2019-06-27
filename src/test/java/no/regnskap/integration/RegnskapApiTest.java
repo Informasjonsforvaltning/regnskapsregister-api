@@ -26,6 +26,8 @@ import static no.regnskap.TestData.*;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
+//force build
+
 @Category(IntegrationTest.class)
 public class RegnskapApiTest {
     private static File testComposeFile = createTmpComposeFile();
