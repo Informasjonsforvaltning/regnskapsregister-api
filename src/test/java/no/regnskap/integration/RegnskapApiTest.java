@@ -37,6 +37,7 @@ public class RegnskapApiTest {
 
     //trigger build
     //trigger build
+    //trigger build
 
     @BeforeClass
     public static void setup() {
