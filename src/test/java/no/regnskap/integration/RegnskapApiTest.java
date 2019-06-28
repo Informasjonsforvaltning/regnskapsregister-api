@@ -35,11 +35,7 @@ public class RegnskapApiTest {
     private static Slf4jLogConsumer apiLog = new Slf4jLogConsumer(logger).withPrefix("api-container");
     private static DockerComposeContainer compose;
 
-    //trigger build
-    //trigger build
-    //trigger build
-    //trigger build
-    //trigger build
+    //trigger build x
 
     @BeforeClass
     public static void setup() {
