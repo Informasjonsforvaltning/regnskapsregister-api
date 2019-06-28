@@ -36,6 +36,7 @@ public class RegnskapApiTest {
     private static DockerComposeContainer compose;
 
     //trigger build x
+    //trigger buold
 
     @BeforeClass
     public static void setup() {
