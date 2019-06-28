@@ -35,6 +35,8 @@ public class RegnskapApiTest {
     private static Slf4jLogConsumer apiLog = new Slf4jLogConsumer(logger).withPrefix("api-container");
     private static DockerComposeContainer compose;
 
+    //trigger build
+
     @BeforeClass
     public static void setup() {
         if (testComposeFile != null && testComposeFile.exists()) {
