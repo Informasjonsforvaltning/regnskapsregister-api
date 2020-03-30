@@ -81,6 +81,7 @@ object BR {
     val driftsinntekter = model.createProperty(uri, "driftsinntekter")
     val sumDriftsinntekter = model.createProperty(uri, "sumDriftsinntekter")
     val driftskostnad = model.createProperty(uri, "driftskostnad")
+    val annenDriftskostnad = model.createProperty(uri, "annenDriftskostnad")
     val sumDriftskostnad = model.createProperty(uri, "sumDriftskostnad")
     val finansresultat = model.createProperty(uri, "finansresultat")
     val nettoFinans = model.createProperty(uri, "nettoFinans")

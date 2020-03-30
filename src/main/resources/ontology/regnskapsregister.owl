@@ -467,6 +467,13 @@
         <rdfs:label xml:lang="no">sumDriftsinntekter</rdfs:label>
     </owl:DatatypeProperty>
     <!--
+     https://github.com/Informasjonsforvaltning/regnskapsregister-api/blob/develop/src/main/resources/ontology/regnskapsregister.owl#annenDriftskostnad
+    -->
+    <owl:DatatypeProperty rdf:about="https://github.com/Informasjonsforvaltning/regnskapsregister-api/blob/develop/src/main/resources/ontology/regnskapsregister.owl#annenDriftskostnad">
+        <rdfs:seeAlso>https://fellesdatakatalog.brreg.no/concepts/52aa0da0-3ed7-41cf-9c72-41b00c874abe</rdfs:seeAlso>
+        <rdfs:label xml:lang="no">annenDriftskostnad</rdfs:label>
+    </owl:DatatypeProperty>
+    <!--
      https://github.com/Informasjonsforvaltning/regnskapsregister-api/blob/develop/src/main/resources/ontology/regnskapsregister.owl#sumDriftskostnad
     -->
     <owl:DatatypeProperty rdf:about="https://github.com/Informasjonsforvaltning/regnskapsregister-api/blob/develop/src/main/resources/ontology/regnskapsregister.owl#sumDriftskostnad">

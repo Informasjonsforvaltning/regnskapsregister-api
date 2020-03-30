@@ -112,6 +112,7 @@ private fun List<Regnskap>.createModel(urls: ExternalUrls): Model {
                             .addProperty(
                                 BR.driftskostnad,
                                 model.createResource(BR.Driftskostnad)
+                                    .addLiteral(BR.annenDriftskostnad, it.resultatregnskapResultat.driftsresultat.driftskostnad.annenDriftskostnad ?: BigDecimal.ZERO)
                                     .addLiteral(BR.sumDriftskostnad, it.resultatregnskapResultat.driftsresultat.driftskostnad.sumDriftskostnad ?: BigDecimal.ZERO)))
                     .addProperty(
                         BR.finansresultat,

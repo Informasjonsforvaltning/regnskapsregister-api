@@ -196,11 +196,12 @@ public class TestData {
                 new Driftsresultat()
                     .driftsresultat(BigDecimal.valueOf(baseValue + 13))
                     .driftsinntekter(new Driftsinntekter().sumDriftsinntekter(BigDecimal.valueOf(baseValue + 14)))
-                    .driftskostnad(new Driftskostnad().sumDriftskostnad(BigDecimal.valueOf(baseValue + 15))))
+                    .driftskostnad(new Driftskostnad().annenDriftskostnad(BigDecimal.valueOf(baseValue + 15))
+                                                      .sumDriftskostnad(BigDecimal.valueOf(baseValue + 16))))
             .finansresultat(
                 new Finansresultat()
-                    .nettoFinans(BigDecimal.valueOf(baseValue + 16))
-                    .finansinntekt(new Finansinntekt().sumFinansinntekter(BigDecimal.valueOf(baseValue + 17)))
-                    .finanskostnad(new Finanskostnad().sumFinanskostnad(BigDecimal.valueOf(baseValue + 18))));
+                    .nettoFinans(BigDecimal.valueOf(baseValue + 17))
+                    .finansinntekt(new Finansinntekt().sumFinansinntekter(BigDecimal.valueOf(baseValue + 18)))
+                    .finanskostnad(new Finanskostnad().sumFinanskostnad(BigDecimal.valueOf(baseValue + 19))));
     }
 }

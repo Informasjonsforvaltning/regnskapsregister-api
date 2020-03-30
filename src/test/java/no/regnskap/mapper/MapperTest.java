@@ -84,6 +84,7 @@ class MapperTest {
         assertEquals(XmlTestData.ALPHA_FIELD_167, fieldsAlpha.getResultatregnskapResultat().getOrdinaertResultatFoerSkattekostnad().intValue());
         assertEquals(XmlTestData.ALPHA_FIELD_146, fieldsAlpha.getResultatregnskapResultat().getDriftsresultat().getDriftsresultat().intValue());
         assertEquals(XmlTestData.ALPHA_FIELD_72, fieldsAlpha.getResultatregnskapResultat().getDriftsresultat().getDriftsinntekter().getSumDriftsinntekter().intValue());
+        assertEquals(XmlTestData.ALPHA_FIELD_82, fieldsAlpha.getResultatregnskapResultat().getDriftsresultat().getDriftskostnad().getAnnenDriftskostnad().intValue());
         assertEquals(XmlTestData.ALPHA_FIELD_17126, fieldsAlpha.getResultatregnskapResultat().getDriftsresultat().getDriftskostnad().getSumDriftskostnad().intValue());
         assertEquals(XmlTestData.ALPHA_FIELD_158, fieldsAlpha.getResultatregnskapResultat().getFinansresultat().getNettoFinans().intValue());
         assertEquals(XmlTestData.ALPHA_FIELD_153, fieldsAlpha.getResultatregnskapResultat().getFinansresultat().getFinansinntekt().getSumFinansinntekter().intValue());
@@ -104,6 +105,7 @@ class MapperTest {
         assertEquals(XmlTestData.BRAVO_FIELD_167, fieldsBravo.getResultatregnskapResultat().getOrdinaertResultatFoerSkattekostnad().intValue());
         assertEquals(XmlTestData.BRAVO_FIELD_146, fieldsBravo.getResultatregnskapResultat().getDriftsresultat().getDriftsresultat().intValue());
         assertEquals(XmlTestData.BRAVO_FIELD_72, fieldsBravo.getResultatregnskapResultat().getDriftsresultat().getDriftsinntekter().getSumDriftsinntekter().intValue());
+        assertEquals(XmlTestData.BRAVO_FIELD_82, fieldsBravo.getResultatregnskapResultat().getDriftsresultat().getDriftskostnad().getAnnenDriftskostnad().intValue());
         assertEquals(XmlTestData.BRAVO_FIELD_17126, fieldsBravo.getResultatregnskapResultat().getDriftsresultat().getDriftskostnad().getSumDriftskostnad().intValue());
         assertEquals(XmlTestData.BRAVO_FIELD_158, fieldsBravo.getResultatregnskapResultat().getFinansresultat().getNettoFinans().intValue());
         assertEquals(XmlTestData.BRAVO_FIELD_153, fieldsBravo.getResultatregnskapResultat().getFinansresultat().getFinansinntekt().getSumFinansinntekter().intValue());

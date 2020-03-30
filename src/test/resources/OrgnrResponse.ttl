@@ -2,6 +2,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix dct:   <http://purl.org/dc/terms/> .
 @prefix org:   <http://www.w3.org/ns/org#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 
 <http://invalid.org/regnskap/5d81fe657091ee0cce6bccdb>
@@ -54,19 +55,20 @@
                                                             br:driftsinntekter    [ a                      br:Driftsinntekter ;
                                                                                     br:sumDriftsinntekter  "2032"^^xsd:decimal
                                                                                   ] ;
-                                                            br:driftskostnad      [ a                    br:Driftskostnad ;
-                                                                                    br:sumDriftskostnad  "2033"^^xsd:decimal
+                                                            br:driftskostnad      [ a                      br:Driftskostnad ;
+                                                                                    br:annenDriftskostnad  "2033"^^xsd:decimal ;
+                                                                                    br:sumDriftskostnad    "2034"^^xsd:decimal
                                                                                   ] ;
                                                             br:sumDriftsresultat  "2031"^^xsd:decimal
                                                           ] ;
                                        br:finansresultat  [ a                 br:Finansresultat ;
                                                             br:finansinntekt  [ a                      br:Finansinntekt ;
-                                                                                br:sumFinansinntekter  "2035"^^xsd:decimal
+                                                                                br:sumFinansinntekter  "2036"^^xsd:decimal
                                                                               ] ;
                                                             br:finanskostnad  [ a                    br:Finanskostnad ;
-                                                                                br:sumFinanskostnad  "2036"^^xsd:decimal
+                                                                                br:sumFinanskostnad  "2037"^^xsd:decimal
                                                                               ] ;
-                                                            br:nettoFinans    "2034"^^xsd:decimal
+                                                            br:nettoFinans    "2035"^^xsd:decimal
                                                           ] ;
                                        br:ordinaertResultatFoerSkattekostnad
                                                "2028"^^xsd:decimal ;

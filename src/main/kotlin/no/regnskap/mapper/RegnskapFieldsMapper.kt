@@ -18,6 +18,7 @@ private const val FELTKODE_RESULTAT_TOTAL = "36633"
 private const val FELTKODE_RESULTAT_ORDINAERT = "167"
 private const val FELTKODE_DRIFTSRESULTAT = "146"
 private const val FELTKODE_DRIFTSINNTEKTER = "72"
+private const val FELTKODE_ANNEN_DRIFTSKOSTNAD = "82"
 private const val FELTKODE_DRIFTSKOSTNAD = "17126"
 private const val FELTKODE_FINANSRESULTAT = "158"
 private const val FELTKODE_FINANSINNTEKT = "153"
@@ -41,6 +42,7 @@ fun mapFieldsFromXmlData(fields: RegnskapFieldsDB, xmlData: List<RegnskapXmlInfo
             FELTKODE_RESULTAT_ORDINAERT -> fields.resultatregnskapResultat.ordinaertResultatFoerSkattekostnad = it.sum
             FELTKODE_DRIFTSRESULTAT -> fields.resultatregnskapResultat.driftsresultat.driftsresultat = it.sum
             FELTKODE_DRIFTSINNTEKTER -> fields.resultatregnskapResultat.driftsresultat.driftsinntekter.sumDriftsinntekter = it.sum
+            FELTKODE_ANNEN_DRIFTSKOSTNAD -> fields.resultatregnskapResultat.driftsresultat.driftskostnad.annenDriftskostnad = it.sum
             FELTKODE_DRIFTSKOSTNAD -> fields.resultatregnskapResultat.driftsresultat.driftskostnad.sumDriftskostnad = it.sum
             FELTKODE_FINANSRESULTAT -> fields.resultatregnskapResultat.finansresultat.nettoFinans = it.sum
             FELTKODE_FINANSINNTEKT -> fields.resultatregnskapResultat.finansresultat.finansinntekt.sumFinansinntekter = it.sum

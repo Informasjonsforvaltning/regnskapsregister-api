@@ -17,6 +17,7 @@ public class XmlTestData {
     public final static int ALPHA_FIELD_167 = 567732;
     public final static int ALPHA_FIELD_146 = 604176;
     public final static int ALPHA_FIELD_72 = 10900358;
+    public final static int ALPHA_FIELD_82 = 1352761;
     public final static int ALPHA_FIELD_17126 = 10296182;
     public final static int ALPHA_FIELD_158 = -36445;
     public final static int ALPHA_FIELD_153 = 3939;
@@ -36,6 +37,7 @@ public class XmlTestData {
     public final static int BRAVO_FIELD_167 = 1017890;
     public final static int BRAVO_FIELD_146 = 1316195;
     public final static int BRAVO_FIELD_72 = 6600000;
+    public final static int BRAVO_FIELD_82 = 196761;
     public final static int BRAVO_FIELD_17126 = 5283805;
     public final static int BRAVO_FIELD_158 = -298306;
     public final static int BRAVO_FIELD_153 = 18;

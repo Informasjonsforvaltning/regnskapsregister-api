@@ -330,6 +330,9 @@
       "Driftskostnad": {
         "type": "object",
         "properties": {
+          "annenDriftskostnad": {
+            "type": "number"
+          },
           "sumDriftskostnad": {
             "type": "number"
           }
