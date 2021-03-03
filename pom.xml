@@ -354,12 +354,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <excludes>
+                    <!--<excludes>
                         <exclude>${integration.test.pattern}</exclude>
-                    </excludes>
+                    </excludes> -->
                     <groups>unit</groups>
                     <useSystemClassLoader>false</useSystemClassLoader>
-                    <argLine>${surefireArgLine} -Dfile.encoding=${java.encoding}</argLine>
+                    <!-- <argLine>${surefireArgLine} -Dfile.encoding=${java.encoding}</argLine> -->
                 </configuration>
             </plugin>
 
@@ -373,7 +373,7 @@
                     <groups>service</groups>
                     <excludedGroups>unit</excludedGroups>
                     <includes>
-                        <include>${integration.test.pattern}</include>
+                        <include>**/*.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -389,53 +389,10 @@
                 <version>0.8.5</version>
                 <executions>
                     <execution>
-                        <id>pre-unit-test</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
-                        <configuration>
-                            <destFile>${sonar.jacoco.reportPath}</destFile>
-                            <propertyName>surefireArgLine</propertyName>
-                        </configuration>
                     </execution>
-                    <execution>
-                        <id>post-unit-test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <dataFile>${sonar.jacoco.reportPath}</dataFile>
-                            <!-- Sets the output directory for the code coverage report for unit tests. -->
-                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>pre-integration-test</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                        <configuration>
-                            <destFile>${sonar.jacoco.itReportPath}</destFile>
-                            <propertyName>surefireArgLine</propertyName>
-                        </configuration>
-                    </execution>
-                    <!-- Ensures that the code coverage report for integration tests is
-                        created after integration tests have been run. -->
-                    <execution>
-                        <id>post-integration-test</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <dataFile>${sonar.jacoco.itReportPath}</dataFile>
-                            <!-- Sets the output directory for the code coverage report. -->
-                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
-                        </configuration>
-                    </execution>
-
                     <execution>
                         <id>jacoco-report</id>
                         <phase>verify</phase>
@@ -443,8 +400,14 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
-                    
                 </executions>
+            </plugin>
+
+            <!-- mvn versions:display-dependency-updates -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
             </plugin>
 
             <!-- mvn versions:display-dependency-updates -->
