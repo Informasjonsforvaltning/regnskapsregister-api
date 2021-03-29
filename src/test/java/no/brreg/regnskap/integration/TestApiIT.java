@@ -96,7 +96,7 @@ public class TestApiIT extends EmbeddedPostgresSetup {
             }
             */
 
-            //regnskapId1 = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2_2015S);
+            regnskapId1 = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2_2015S);
 
             //Add partner
             Connection connection = connectionManager.getConnection();
