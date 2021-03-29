@@ -211,6 +211,11 @@
                                 <include>**/*.java</include>
                             </includes>
                             <argLine>${surefireArgLine} -Dfile.encoding=${java.encoding}</argLine>
+                            <properties>
+                                <configurationParameters>
+                                    junit.jupiter.testinstance.lifecycle.default = per_class
+                                </configurationParameters>
+                            </properties>
                         </configuration>
                     </plugin>
                 </plugins>
