@@ -75,6 +75,7 @@ public class TestApiIT extends EmbeddedPostgresSetup {
         );
 
         if (!hasImportedTestdata) {
+            /*
             InputStream testdataIS = new ByteArrayInputStream(XmlTestData.xmlTestString.getBytes(StandardCharsets.UTF_8));
             try {
                 regnskapLogRepository.persistRegnskapFile(TESTDATA_FILENAME, testdataIS);
@@ -93,8 +94,9 @@ public class TestApiIT extends EmbeddedPostgresSetup {
             } catch (SQLException e) {
                 LOGGER.info("Regnskap test data already loaded");
             }
+            */
 
-            regnskapId1 = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2_2015S);
+            //regnskapId1 = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2_2015S);
 
             //Add partner
             Connection connection = connectionManager.getConnection();
