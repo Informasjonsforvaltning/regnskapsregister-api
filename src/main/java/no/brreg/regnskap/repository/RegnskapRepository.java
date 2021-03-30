@@ -347,6 +347,7 @@ public class RegnskapRepository {
             ResultSet rs = stmt.getGeneratedKeys();
             if (rs.next()) {
                 regnskapId = rs.getInt(1);
+                LOGGER.info("Generated regnskapId: " + regnskapId);
             }
         }
 

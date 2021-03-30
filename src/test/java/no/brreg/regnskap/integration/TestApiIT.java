@@ -14,6 +14,8 @@ import java.sql.PreparedStatement;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -75,28 +77,9 @@ public class TestApiIT extends EmbeddedPostgresSetup {
         );
 
         if (!hasImportedTestdata) {
-            /*
-            InputStream testdataIS = new ByteArrayInputStream(XmlTestData.xmlTestString.getBytes(StandardCharsets.UTF_8));
-            try {
-                regnskapLogRepository.persistRegnskapFile(TESTDATA_FILENAME, testdataIS);
-            } catch (SQLException e) {
-                LOGGER.info("Regnskap file test data already loaded");
-            }
-
-            try {
-                regnskap2016Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2016S);
-                regnskap2017Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2017S);
-                regnskap2018_1Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_1S);
-                regnskap2018_2Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_2S);
-                regnskap2018_3Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_3K);
-                regnskap2019_1Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2019_1S);
-                regnskap2019_2Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2019_2K);
-            } catch (SQLException e) {
-                LOGGER.info("Regnskap test data already loaded");
-            }
-            */
 
             regnskapId1 = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2_2015S);
+            regnskapId2 = regnskapRepository.persistRegnskap(TestData.REGNSKAP_3_2015S);
 
             //Add partner
             Connection connection = connectionManager.getConnection();
@@ -116,6 +99,6 @@ public class TestApiIT extends EmbeddedPostgresSetup {
         Mockito.when(httpServletRequestMock.getHeader("Accept")).thenReturn("application/xml");
         ResponseEntity<String> response = testApiImpl.getMostRecent(httpServletRequestMock);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(response.getBody(), TestData.TEST_ORGNR_2);
+        assertEquals(response.getBody(), TestData.TEST_ORGNR_3);
     }
 }

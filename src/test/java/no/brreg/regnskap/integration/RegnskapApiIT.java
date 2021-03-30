@@ -77,36 +77,29 @@ public class RegnskapApiIT extends EmbeddedPostgresSetup {
             httpServletRequestMock
         );
 
-        if (!hasImportedTestdata) {
-            InputStream testdataIS = new ByteArrayInputStream(XmlTestData.xmlTestString.getBytes(StandardCharsets.UTF_8));
-            try {
-                regnskapLogRepository.persistRegnskapFile(TESTDATA_FILENAME, testdataIS);
-            } catch (SQLException e) {
-                LOGGER.info("Regnskap file test data already loaded");
-            }
+        InputStream testdataIS = new ByteArrayInputStream(XmlTestData.xmlTestString.getBytes(StandardCharsets.UTF_8));
+        try {
+            regnskapLogRepository.persistRegnskapFile(TESTDATA_FILENAME, testdataIS);
+        } catch (SQLException e) {
+            LOGGER.info("Regnskap file test data already loaded");
+        }
 
-            try {
-                regnskap2016Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2016S);
-                regnskap2017Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2017S);
-                regnskap2018_1Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_1S);
-                regnskap2018_2Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_2S);
-                regnskap2018_3Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_3K);
-                regnskap2019_1Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2019_1S);
-                regnskap2019_2Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2019_2K);
-            } catch (SQLException e) {
-                LOGGER.info("Regnskap test data already loaded");
-            }
 
-            //Add partner
-            Connection connection = connectionManager.getConnection();
-            try (PreparedStatement stmt = connection.prepareStatement("INSERT INTO rregapi.partners (name,key) VALUES ('test','test')")) {
-                stmt.executeUpdate();
-                connection.commit();
-            } catch (SQLException e) {
-                LOGGER.info("Partner test data already loaded");
-            }
+        regnskap2016Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2016S);
+        regnskap2017Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2017S);
+        regnskap2018_1Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_1S);
+        regnskap2018_2Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_2S);
+        regnskap2018_3Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2018_3K);
+        regnskap2019_1Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2019_1S);
+        regnskap2019_2Id = regnskapRepository.persistRegnskap(TestData.REGNSKAP_2019_2K);
 
-            hasImportedTestdata = true;
+        //Add partner
+        Connection connection = connectionManager.getConnection();
+        try (PreparedStatement stmt = connection.prepareStatement("INSERT INTO rregapi.partners (name,key) VALUES ('test','test')")) {
+            stmt.executeUpdate();
+            connection.commit();
+        } catch (SQLException e) {
+            LOGGER.info("Partner test data already loaded");
         }
     }
 
